@@ -1,0 +1,40 @@
+<button onclick='originalA=document.getElementById("data").innerHTML;
+originalB="0".concat(originalA.concat("0"));
+newA="";
+for(i=1;i<(originalA+2).length;i++){
+	if(originalB.substring(i-1,i)=="1"){
+		if(originalB.substring(i,i+1)=="1"){
+			if(originalB.substring(i+1,i+2)=="1"){
+				newA=newA.concat("0");
+			} else {
+				newA=newA.concat("1");
+			}
+		} else {
+			if(originalB.substring(i+1,i+2)=="1"){
+				newA=newA.concat("1");
+			} else {
+				newA=newA.concat("0");
+			}
+
+		}
+	} else {
+		if(originalB.substring(i,i+1)=="1"){
+			if(originalB.substring(i+1,i+2)=="1"){
+				newA=newA.concat("1");
+
+			} else {
+				newA=newA.concat("1");
+			}
+
+		} else {
+			if(originalB.substring(i+1,i+2)=="1"){
+				newA=newA.concat("1");
+			} else {
+				newA=newA.concat("0");
+			}
+
+		}
+	}
+
+}
+document.getElementById("data").innerHTML="1".concat(newA);'><span id="data">1</span></button>
